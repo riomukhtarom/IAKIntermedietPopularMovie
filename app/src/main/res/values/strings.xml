@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Popular Movie</string>
+    <string name="detail_movie">Movie Details</string>
+
+    <string name="text1">Popular Movie1</string>
+    <string name="text2">Popular Movie2</string>
+    <string name="text3">Popular Movie3</string>
+    <string name="text4">Popular Movie4</string>
+    <string name="text5">Popular Movie5</string>
+    <string name="text6">Popular Movie6</string>
+    <string name="text7">Popular Movie7</string>
+
+
+</resources>
