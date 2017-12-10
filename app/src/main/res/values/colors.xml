@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#2c2c2e</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBacgroundMovie">#FFFFD640</color>
+    <color name="colorWhite">#ffffff</color>
 </resources>

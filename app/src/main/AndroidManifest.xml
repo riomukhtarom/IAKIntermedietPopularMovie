@@ -22,6 +22,9 @@
         </activity>
         <activity android:name=".DetailMovieActivity"
             android:label="@string/detail_movie"></activity>
+        <provider
+            android:authorities="com.example.android.iakintermedietpopularmovie"
+            android:name="com.example.android.iakintermedietpopularmovie.data.MovieContentProvider"/>
     </application>
 
 </manifest>
