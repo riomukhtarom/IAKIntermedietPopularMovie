@@ -2,12 +2,13 @@
 <ScrollView
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.iakintermedietpopularmovie.DetailMovieActivity">
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.example.android.iakintermedietpopularmovie.DetailMovieActivity"
         android:orientation="vertical">
         <TextView
             android:id="@+id/movie_title"
@@ -23,39 +24,48 @@
             android:layout_marginTop="16dp">
             <ImageView
                 android:id="@+id/movie_image"
-                android:layout_width="132dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:layout_alignParentRight="true"/>
             <TextView
-                android:id="@+id/movie_year"
+                android:id="@+id/tv_relese_date"
+                android:text="@string/release_date"
                 android:layout_toLeftOf="@id/movie_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="16dp"
-                android:text="@string/text1"
-                android:background="@color/colorPrimary"/>
+                android:textSize="12sp"
+                android:layout_marginRight="16dp"/>
             <TextView
-                android:id="@+id/movie_duration"
+                android:id="@+id/movie_year"
+                android:layout_toLeftOf="@id/movie_image"
+                android:layout_below="@id/tv_relese_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="28sp"
+                android:layout_marginRight="16dp"/>
+
+
+            <TextView
+                android:id="@+id/tv_rating"
+                android:text="@string/rating"
                 android:layout_toLeftOf="@id/movie_image"
                 android:layout_below="@id/movie_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="12sp"
                 android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/text1"
-                android:background="@color/colorPrimary"/>
+                android:layout_marginTop="16dp"/>
             <TextView
                 android:id="@+id/movie_rating"
                 android:layout_toLeftOf="@id/movie_image"
-                android:layout_below="@id/movie_duration"
+                android:layout_below="@id/tv_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/text1"
-                android:background="@color/colorPrimary"
-                android:textAlignment="viewEnd"/>
+                android:textSize="24sp"
+                android:textAlignment="gravity"/>
+
             <Button
                 android:id="@+id/favorite_button"
                 android:layout_width="wrap_content"
@@ -65,9 +75,20 @@
                 android:padding="12dp"
                 android:layout_toLeftOf="@id/movie_image"
                 android:layout_below="@id/movie_rating"
-                android:onClick="save_movie"/>
+                android:onClick="save_movie"
+                android:text="Add Favorite"
+                android:background="@color/colorBacgroundMovie"
+                android:textColor="@color/colorWhite"/>
 
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/movie_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:padding="16dp"
+            android:textAlignment="viewEnd"/>
 
     </LinearLayout>
 </ScrollView>

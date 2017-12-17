@@ -1,5 +1,6 @@
 package com.example.android.iakintermedietpopularmovie;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -66,6 +69,36 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewClick
         intent.putExtra(DetailMovieActivity.MOVIE_INTENT, movie);
 
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.movie_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Context context = this;
+        int menuIntemWasSelected = item.getItemId();
+        switch (menuIntemWasSelected){
+            case R.id.favorite_menu:
+                //favorite
+                String messageFavorite = "Favorite";
+                Toast.makeText(context, messageFavorite, Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.popular_menu:
+                //popolar
+                String messagePopular = "Popular";
+                Toast.makeText(context, messagePopular, Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.top_rated_menu:
+                //top rated
+                String messageTopRated = "Top Rated";
+                Toast.makeText(context, messageTopRated, Toast.LENGTH_LONG).show();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public class GetDataTask extends AsyncTask<URL, Void, String>{

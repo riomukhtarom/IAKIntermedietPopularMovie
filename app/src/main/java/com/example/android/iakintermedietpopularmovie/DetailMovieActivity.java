@@ -1,6 +1,7 @@
 package com.example.android.iakintermedietpopularmovie;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,6 +32,7 @@ public class DetailMovieActivity extends AppCompatActivity {
     ImageView mMovieImage;
     TextView mMovieYear;
     TextView mMovieRating;
+    TextView mMovieOverview;
 
     //TextView mMovieFavoriteBotton;
 
@@ -47,12 +49,13 @@ public class DetailMovieActivity extends AppCompatActivity {
         mMovieImage = (ImageView) findViewById(R.id.movie_image);
         mMovieYear = (TextView) findViewById(R.id.movie_year);
         mMovieRating = (TextView) findViewById(R.id.movie_rating);
+        mMovieOverview = (TextView) findViewById(R.id.movie_overview);
 
 
         movie = getIntent().getParcelableExtra(MOVIE_INTENT);
 
         //title
-        mMovieTitle.setText(movie.getTitle());
+        mMovieTitle.setText(movie.getTitle() );
 
         //gambar
         URL poster_url = NetworkUtils.buildMoviePosterUrl(movie.getPosterPath());
@@ -66,17 +69,11 @@ public class DetailMovieActivity extends AppCompatActivity {
         //rating
         mMovieRating.setText(String.valueOf(movie.getVoteAverage()));
 
-    }
+        //overview
+        mMovieOverview.setText(movie.getOverview());
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
+    } 
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
 
     public void save_movie(View v){
         ContentValues contentValues = new ContentValues();
