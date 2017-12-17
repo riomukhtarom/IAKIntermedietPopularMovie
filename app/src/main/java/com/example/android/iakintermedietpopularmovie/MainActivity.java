@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewClick
     @BindView(R.id.rv_movie) RecyclerView mMovieView;
     @BindView(R.id.pb_loading) ProgressBar mLoadingView;
 
-    private MovieAdapter adapter;
+    private MovieAdapter movieAdapter;
     private List<Movie> movieList = new ArrayList<>();
 
     @Override
@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewClick
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        adapter = new MovieAdapter(this, movieList, this);
+        movieAdapter = new MovieAdapter(this, movieList, this);
 
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
         mMovieView.setLayoutManager(layoutManager);
-        mMovieView.setAdapter(adapter);
+        mMovieView.setAdapter(movieAdapter);
 
         loadData();
     }
@@ -145,9 +145,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewClick
                     );
                 }
 
-                adapter.notifyDataSetChanged();
+                movieAdapter.notifyDataSetChanged();
 
-                Log.e("json_array", strings);
+                Log.e("json_array movie", strings);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

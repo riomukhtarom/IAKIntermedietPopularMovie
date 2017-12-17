@@ -7,5 +7,7 @@
     <string name="popolar">Popular</string>
     <string name="top_rated">Top Rated</string>
     <string name="favorite">Favorite</string>
+    <string name="trailers">Trailer</string>
+    <string name="review">Review</string>
 
 </resources>

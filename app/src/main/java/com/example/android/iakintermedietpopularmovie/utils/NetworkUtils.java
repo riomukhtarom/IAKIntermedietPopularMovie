@@ -21,7 +21,7 @@ public class NetworkUtils {
     final static private String MOVIE_POSTER_BASE_URL = "https://image.tmdb.org/t/p/";
 
     final static private String PARAM_API_KEY = "api_key";
-    final static private String API_KEY = "api key";
+    final static private String API_KEY = "api";
     final static private String IMAGE_SIZE = "w185";
     final static private String VIDEOS_ENDPOINT_SEGMENT = "videos";
     final static private String REVIEWS_ENDPOINT_SEGMENT = "reviews";
